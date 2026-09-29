@@ -182,3 +182,72 @@ function fullAddress(city,country){
 }
 console.log(fullAddress("madrid", "spain"));// repet state by string
 //function have 4 states
+//array object (why testing array object? becuse, Practicality and json-like)
+
+const cars=[
+    {
+        name:'doge',
+        id:1,
+        engine:'v8',
+        canstart:true
+
+    },
+    { 
+        name:'alfa',
+        id:4,
+        engine:'v6',
+        canstart:false
+    },
+    {
+        name:'bmw',
+        id:2,
+        engine:'v4',
+        canstart:true 
+    }
+];
+console.log (cars[0].engine); //access method array object
+//change array object to json
+const exlCar=JSON.stringify(cars);
+console.log(exlCar);
+//loop
+//for
+
+for(let i=0;i<10;i++){
+    console.log(i);
+}
+//to display array elements(This method is good for displaying array elements, but it's better than for of)
+for(i=0;i<cars.length;i++){
+    console.log(cars[0].name);
+}
+//while(old loop)
+let pen=1
+while(pen<10){
+    console.log('blue'+pen);
+    pen++  //If I hadn't written this operation (pen++), it would have gotten stuck in an infinite loop.(crash browser)
+}
+// for ... of
+for(let srt of cars){
+    console.log(srt.name , srt.engine);
+}
+//high order array methods
+//forEach
+
+
+/*cars2.forEach(function(c) {   // this cant work becuse cars2 not array , forEach working on array 
+    console.log(c)
+});*/
+
+cars.forEach(function(c){
+     console.log(c)
+});
+// map
+const newCars=cars.map(function(cc){
+    return{name:cc.name,engine:cc.engine}
+});
+console.log(newCars)
+//filter
+const newCars1=cars.filter(function(cc){
+    return cc.canstart===true
+});
+console.log(newCars1);
+// high order array methods mixed
