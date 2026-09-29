@@ -216,7 +216,7 @@ for(let i=0;i<10;i++){
     console.log(i);
 }
 //to display array elements(This method is good for displaying array elements, but it's better than for of)
-for(i=0;i<cars.length;i++){
+for(let i=0;i<cars.length;i++){
     console.log(cars[0].name);
 }
 //while(old loop)
@@ -251,3 +251,15 @@ const newCars1=cars.filter(function(cc){
 });
 console.log(newCars1);
 // high order array methods mixed
+const newCars4=cars.forEach(function(c){})+cars.map(function(c){
+    return{name:c.name,engine:c.engine}
+})+cars.filter(function(c){return c.canstart===true});
+console.log(newCars4); // (tested this but , answer this cod = undefined[object Object],[object Object],[object Object][object Object],[object Object] ) forEach not good idea for this
+const newCars5=cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}});
+console.log(newCars5);// i can search in array by this methods but this time , I didn't use it because `forEach`  doesn't return an array.
+
+
+/*const newCars6=cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}}).forEach(function(search){search.name='benze'}); // cant work again becuse bad use forEach
+console.log(newCars6);'*/
+const newCars6=cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}}).forEach(function(show){console.log(show);}); // this code can work and its return what iwant but this newCars6 return undefined    sooooooo
+cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}}).forEach(function(show){console.log(show);});//if i need a make array use a map and filter but if u need return a data this can work
