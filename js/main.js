@@ -215,7 +215,7 @@ console.log(exlCar);
 for(let i=0;i<10;i++){
     console.log(i);
 }
-//to display array elements(This method is good for displaying array elements, but it's better than for of)
+//to display array elements(This method is good for displaying array elements, but (for of) better than it)
 for(let i=0;i<cars.length;i++){
     console.log(cars[0].name);
 }
@@ -263,3 +263,71 @@ console.log(newCars5);// i can search in array by this methods but this time , I
 console.log(newCars6);'*/
 const newCars6=cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}}).forEach(function(show){console.log(show);}); // this code can work and its return what iwant but this newCars6 return undefined    sooooooo
 cars.filter(function(c){return c.canstart===true}).map(function(c){return{engine:c.engine}}).forEach(function(show){console.log(show);});//if i need a make array use a map and filter but if u need return a data this can work
+//condition
+//if(),if/else,else if()
+let x=11;
+if(x<10){
+    console.log('x is less than 10');
+}
+else if(x>10){
+    console.log('x is greater than 10');
+}
+else{
+    console.log('x is equal to 10');
+}
+// my test   u know, all Mechanic => engine = my love   :))
+let engine=2200+"hp";
+if(engine<2000+"hp"){
+    console.log("lower engine");
+}
+else if(engine>2000+"hp"){
+    console.log("higher engine => test for god :)");
+}
+else{
+    console.log("equal engine");
+}
+// but this test is not good becuse i use string and number in the same time (i will fix it in the future)
+let engine1=1500;
+if(engine1<2000){
+    console.log(`lower engine  ${engine1}hp`);
+}
+else if(engine1>2000){
+    console.log(`higher engine  ${engine1}hp => test for god :)`);
+}
+else{
+    console.log(`equal engine  ${engine1}hp`);
+}
+//ternary operator
+let x1=10;
+let color1=x1>10 ? 'red' : 'blue';
+console.log(color1);
+//switch
+let color='blue';
+switch(color){
+    case 'red':
+        console.log('color is red')
+        break;
+    case 'blue':
+        console.log('color is blue')
+        break;
+    default:
+        console. log('color is not red or blue');        
+}
+// my love test
+let piston= 'alminum';
+switch(piston){
+    case 'alminum':
+        console.log('piston is alminum')
+        break;
+    case 'steel':
+        console.log('piston is steel')
+        break;
+    default:
+        console. log('piston is not alminum or steel');        
+}
+//arrow function test i testing it last exercise  but this time better than last time becuse i use it in the high order array methods
+// test easy arrow function
+const addNum=(num1=2,num2=9)=>console.log(num1+num2);
+addNum(22,81);
+addNum(22);
+
