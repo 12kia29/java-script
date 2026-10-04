@@ -331,3 +331,49 @@ const addNum=(num1=2,num2=9)=>console.log(num1+num2);
 addNum(22,81);
 addNum(22);
 
+// test arrow function in the high order array methods
+
+
+/*let  newCars11=cars.filter(function(b){return b.canstart===true;}).map(function(b){return{engine:b.engine};}),cars.filter(function(f){ return f.canstart === true; }).map(function(f){return{name:f.name};}) => console.log(cars.filter(function(b){return b.canstart===true;}).map(function(b){return{engine:b.engine};}),cars.filter(function(f) { return f.canstart === true; }).map(function(f) { return { name: f.name }; }));*/ // this bad idea becuse this not function .It's ridiculous.
+
+// this arrow function in the high order array methods
+let newCars11=cars.filter(b=>b.canstart===true).map(b=>{return{engine:b.engine};})
+console.log(newCars11);
+// test 1 this high order array methods in the arrow function
+const newCars12=(x,y)=>{return x.filter(function(b){return b.canstart===true} ).map(function(b){return{engine:b.engine};})+y.filter(function(f){return f.canstart===true}).map(function(f){return{name:f.name};})}
+console.log(newCars12(cars,cars));// he return undefined[object Object],[object Object][object Object],[object Object] becuse this function not return an array but i can use it in the console.log to return what i want
+console.log(newCars12);// this function return the mettod  but not return the data  its not return what i want
+//test 2 this high order array methods in the arrow function
+const newCars13=(x,y)=>{console.log(x); console.log(y);};
+newCars13 (
+    cars.filter(function(b) { return b.canstart === true; }).map(function(b) { return { engine: b.engine }; }),cars.filter(function(f) { return f.canstart === true; }).map(function(f) { return { name: f.name }; })
+); // this working , get 2 arrays : first get x and second get y 
+const newCars14=(x,y)=>console.log(x,y);
+newCars14 (
+    cars.filter(function(b) { return b.canstart === true; }).map(function(b) { return { engine: b.engine }; }),cars.filter(function(f) { return f.canstart === true; }).map(function(f) { return { name: f.name }; })
+); // get 2 array  
+const newCars15=(x,y)=>console.log(x+y);
+newCars15 (
+    cars.filter(function(b) { return b.canstart === true; }).map(function(b) { return { engine: b.engine }; }),cars.filter(function(f) { return f.canstart === true; }).map(function(f) { return { name: f.name }; })
+); // get undefined[object Object],[object Object][object Object],[object Object] becuse i cant mixed 2 array this function not return an array but i can use it in the console.log to return what i want 
+//test 3 this high order array methods in the arrow function  
+const newCars16=(x,y)=>console.log(x,y);
+newCars16 (
+    cars.filter( b=> b.canstart === true ).map(b=> ({engine: b.engine})),cars.filter(f=> f.canstart === true).map(f=> ({ name: f.name }))
+); // arrow fonction in the array ,array in the arrow function , this working , get 2 arrays (this standard ES6 becuse Its readability is better.) 
+// test oop (object-oriented programming) in js (ES6+),class
+class person{
+    constructor(name , lastName , birthdate){
+        this.name=name;
+        this.lastName=lastName;
+        this.birthdate=birthdate;
+    }
+    getFullName(){
+        return `${this.name} ${this.lastName}`;
+    }
+}
+const student1=new person("lee","james","1995-01-01");
+console.log(student1);
+console.log(student1.getFullName());
+
+
