@@ -362,7 +362,7 @@ newCars16 (
     cars.filter( b=> b.canstart === true ).map(b=> ({engine: b.engine})),cars.filter(f=> f.canstart === true).map(f=> ({ name: f.name }))
 ); // arrow fonction in the array ,array in the arrow function , this working , get 2 arrays (this standard ES6 becuse Its readability is better.) 
 // test oop (object-oriented programming) in js (ES6+),class
-class person{
+class Person{
     constructor(name , lastName , birthdate){
         this.name=name;
         this.lastName=lastName;
@@ -371,9 +371,20 @@ class person{
     getFullName(){
         return `${this.name} ${this.lastName}`;
     }
+    getAge(){
+        const today=new Date();
+        const birthDate=new Date(this.birthdate);
+        let age=today.getFullYear()-birthDate.getFullYear();
+        const m=today.getMonth()-birthDate.getMonth();// If I do not use a conditional statement after this code, the displayed result is 'underfind'.
+        if(m<0 ||(m===0 && today.getDate()< birthDate.getDate())){
+            age--;
+        }
+        return age; // this can work and get age
+    }
 }
-const student1=new person("lee","james","1995-01-01");
+const student1=new Person("lee","james","1995-01-01");
 console.log(student1);
 console.log(student1.getFullName());
+console.log(student1.getAge());
 
 
