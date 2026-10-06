@@ -375,7 +375,7 @@ class Person{
         const today=new Date();
         const birthDate=new Date(this.birthdate);
         let age=today.getFullYear()-birthDate.getFullYear();
-        const m=today.getMonth()-birthDate.getMonth();// If I do not use a conditional statement after this code, the displayed result is 'underfind'.
+        const m=today.getMonth()-birthDate.getMonth();// If I do not use a conditional statement after this code (displayed result 0 or -2) or not writing return , the displayed result is 'underfind'.
         if(m<0 ||(m===0 && today.getDate()< birthDate.getDate())){
             age--;
         }
@@ -386,5 +386,6 @@ const student1=new Person("lee","james","1995-01-01");
 console.log(student1);
 console.log(student1.getFullName());
 console.log(student1.getAge());
+fetch
 
 
